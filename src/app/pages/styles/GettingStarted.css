@@ -1,15 +1,32 @@
 @media screen and (max-width: 768px) {
     .get__started__container{
-        background: linear-gradient(to bottom ,#162808 ,#529917);
+        background: linear-gradient(to top ,#162808,#529917);
     /*,#E5f9ce*/
-        height: 91.5vh;
+        height: 100vh;
         position: fixed;
         width: 100%;
     }
     .container__content{
         display: flex;
         flex-direction: column;
-        height: inherit;
+    }
+    .container__content>img{
+        height: 500px;
+    }
+    .container__content>div>h2{
+        color: #FFBF32;
+        font-weight: bold;
+        font-size: 28px;
+        font-family: Gabarito, serif;
+    }
+    .container__content>div>p{
+        color: white;
+        margin-top: 5px;
+    }
+    .container__content>div{
+        text-align: center;
+        padding: 10px;
+        line-height: 1.5;
     }
 
     .button__container{
@@ -19,17 +36,21 @@
         flex-direction: column;
         gap:5px;
         width: 100%;
+        position: absolute;
+        bottom: 150px;
     }
     .button__container>button{
         font-size: large;
         font-weight: bold;
         border-radius: 20px;
-        padding: 5px;
+        padding: 10px;
         cursor: pointer;
+        outline: none;
     }
     .get__started{
         margin-bottom: 10px;
         background-color: white;
+        border: none;
     }
     .have__account{
         background: transparent;
