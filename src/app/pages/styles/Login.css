@@ -1,0 +1,78 @@
+.login__container{
+    background-image: url("src/assets/LoginImage.jpg");
+    height: 100vh;
+    background-position:left;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    position: fixed;
+
+}
+
+@media screen and (max-width: 768px){
+    .form__holder{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin-top: -150px;
+    }
+    .form__holder>h1{
+        text-align: center;
+        margin-top: -30px;
+        margin-bottom: 20px;
+        color: #FFBF32;
+    }
+    .google__login{
+        background-color: #ffff;
+        border: none;
+        outline: none;
+        border-radius:20px;
+        padding: 10px;
+        width: 100%;
+        font-weight: bold;
+        font-size:15px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        cursor: pointer;
+
+    }
+    .form__holder>form{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 380px;
+    }
+    .form__holder>form>*{
+        width: 100%;
+        padding: 10px;
+        border-radius: 15px;
+        border: none;
+        outline: none;
+    }
+    .login__button{
+        background: #FFBF32;
+        font-size: large;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+    .alternative{
+        display: flex;
+        font-size: large;
+        font-weight: bold;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin: 20px;
+    }
+    .alternative>div{
+        height: 2px;
+        border: 2px solid white;
+        width: 50px;
+    }
+
+}

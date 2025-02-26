@@ -1,8 +1,10 @@
 import {useState} from "react";
 import "./styles/GettingStarted.css"
+import {useNavigate} from "react-router-dom"
 
 const GetStarted =()=>{
     const [screenNumber,setScreenNumber] =useState<number>(0)
+    const navigate =useNavigate()
     if(screenNumber>2){
         setScreenNumber(1)
     }
@@ -13,7 +15,7 @@ const GetStarted =()=>{
         <div className={"get__started__container"}>
             {screenNumber ===0&&(
                 <div className={"container__content"}>
-                    <img alt={"greetings"} src={"src/assets/GetStarted2.png"}/>
+                    <img alt={"greetings"} src={"src/assets/GetStarted2.png"} />
                     <div>
                         <h2>Fun adventures to learn language</h2>
                         <p>Deepen your language skills through reading stories</p>
@@ -31,7 +33,7 @@ const GetStarted =()=>{
             )}
             {screenNumber ===2&&(
                 <div className={"container__content"}>
-                    <img alt={"greetings"} src={"src/assets/GetStarted3.png"}/>
+                    <img alt={"greetings"} src={"src/assets/GetStarted3.png"} className={"login__image"}/>
                     <div>
                         <h2>Enter a world full of stories</h2>
                         <p>Choose your favourite book and start reading!</p>
@@ -43,8 +45,8 @@ const GetStarted =()=>{
                 <div></div>
             </div>
             <div className={"button__container"}>
-                <button className={"get__started"}>Get Started</button>
-                <button className={"have__account"}>I Already Have An Account</button>
+                <button className={"get__started"} onClick={()=>navigate("/register")}>Get Started</button>
+                <button className={"have__account"} onClick={()=>navigate("/login")}>I Already Have An Account</button>
             </div>
 
         </div>
