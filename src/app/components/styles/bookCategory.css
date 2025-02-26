@@ -1,0 +1,5 @@
+.book__category{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
