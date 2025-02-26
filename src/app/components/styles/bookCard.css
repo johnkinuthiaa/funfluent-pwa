@@ -1,0 +1,32 @@
+@media  screen and (max-width: 768px) {
+    .book_card{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+        position: relative;
+    }
+    .book__category{
+        position: absolute;
+        padding: 2px 10px;
+        font-weight: bold;
+        font-size: medium;
+        border-radius: 5px 10px 10px 3px;
+        color: #462104;
+        background: #FFBF32;
+        right: 0;
+        margin-top: 5px;
+    }
+    .book_card>img{
+        height: 250px;
+        width: 190px;
+        border-radius: 10px;
+        object-fit: fill;
+    }
+    .book_card>h4{
+        width: 190px;
+        margin: 5px 0;
+    }
+    .author{
+        margin: 10px 0;
+    }
+}

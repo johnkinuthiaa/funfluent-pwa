@@ -2,6 +2,7 @@
     .stats__container{
         position: absolute;
         width: 100%;
+        padding: 5px;
     }
     .stats__container,.coins__container{
         display: flex;

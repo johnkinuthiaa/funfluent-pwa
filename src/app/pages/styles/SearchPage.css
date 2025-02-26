@@ -1,0 +1,45 @@
+@media screen and (max-width: 768px){
+    .searchPage__image{
+        width: 98%;
+        height: 300px;
+        border-radius: 10px;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+    .discover{
+        position: absolute;
+        margin-top: -120px;
+        margin-left: 20px;
+    }
+    .search{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 10px;
+        border: 1px solid #B7B7B7;
+        border-radius: 20px;
+        padding: 5px;
+    }
+    .search>input{
+        border: none;
+        outline: none;
+        cursor:text;
+        padding: 10px;
+        font-size: medium;
+    }
+    .search__button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    .popular__books{
+        margin: 25px 10px;
+    }
+    .books__container{
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
