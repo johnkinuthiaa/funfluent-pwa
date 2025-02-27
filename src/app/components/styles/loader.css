@@ -1,0 +1,16 @@
+.loader{
+    padding: 30px;
+    border-bottom: 2px solid red;
+    border-top: 2px solid whitesmoke;
+    border-radius: 50%;
+    animation: loader_spin 1s linear infinite ;
+
+}
+@keyframes loader_spin {
+    0%{
+        transform: rotateZ(0);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
