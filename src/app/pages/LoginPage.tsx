@@ -5,12 +5,15 @@ import {auth,provider} from "../../firebase.ts"
 import {useNavigate} from "react-router-dom";
 import Modal from "../components/Modal.tsx";
 import {useState} from "react";
+
+
 const LoginPage =()=>{
     const navigate =useNavigate()
 
     const [email,setEmail] =useState<string>("")
     const [password,setPassword] =useState<string>("")
     const[message,setMessage] =useState<string>("")
+    const[modalColor,setModalColor] =useState<string>("green")
     const logInWithGoogle =(async ()=>{
         const response = await signInWithPopup(auth, provider)
         if(response){
@@ -30,27 +33,32 @@ const LoginPage =()=>{
                 }),
                 headers:myHeaders
             })
-            console.log(response?.ok)
-
             if(response.ok){
                 const data =await response.json()
                 if(data?.statusCode !==200){
                     setMessage(data?.message)
+                    setModalColor("red")
                     setTimeout(()=>{
                         setMessage("")
+                        setModalColor("")
                     },3000)
                 }else{
                     setMessage(data?.message)
+                    setModalColor("green")
                     setTimeout(()=>{
                         setMessage("")
+                        setModalColor("")
                     },3000)
                     navigate("/home")
                 }
             }
         }catch (error) {
             setMessage("Error logging you in because"+error)
+
+            setModalColor("red")
             setTimeout(()=>{
                 setMessage("")
+                setModalColor("")
             },3000)
         }
     })
@@ -81,7 +89,7 @@ const LoginPage =()=>{
                     }}/>
                     <button className={"login__button"} type={"submit"}>Login</button>
                 </form>
-                {message !=""&&<Modal message={message}/>}
+                {message !=""&&<Modal message={message} color={modalColor}/>}
             </div>
 
         </div>

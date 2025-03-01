@@ -9,10 +9,29 @@
         background-color: #ffff;
         top: 10px;
         display: flex;
-        margin: 0;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
-
+        margin: 0 auto;
+        left: 15px;
+        justify-content: space-between;
+        flex-direction: column;
+        border-radius: 10px 10px 0 0;
     }
+    .line__animation{
+        height: 8px;
+        animation:time 3s linear ;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        bottom: 0;
+        position: absolute;
+        margin-left: -9px;
+    }
+}
+@keyframes time {
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+
 }

@@ -1,11 +1,13 @@
 import "./styles/modal.css"
 type ModalMessage ={
     message:string
+    color: string
 }
-const Modal =({message}:ModalMessage)=>{
+const Modal =({message,color}:ModalMessage)=>{
     return(
         <template className={"modal"}>
-            {message}
+            <>{message}</>
+            <div className={"line__animation"} style={{backgroundColor:color}}></div>
         </template>
     )
 }
