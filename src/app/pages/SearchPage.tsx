@@ -4,7 +4,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import BookCard from "../components/BookCard.tsx";
 import {useState} from "react";
 import useSWR from "swr";
-import Loader from "../components/Loader.tsx";
 
 interface BookProps{
     id:number
@@ -16,11 +15,9 @@ interface BookProps{
     imageCover:string
 }
 const SearchPage =()=>{
-    const BOOKS_ENDPOINT =import.meta.env.VITE_STORYBOOK_BASE_URL+"/get/all"
+    const BOOKS_ENDPOINT:string =import.meta.env.VITE_STORYBOOK_BASE_URL+"/api/v1/storybook/get/all"
     const[allBooks,setAllBooks] =useState<BookProps[]>([])
-    const[message,setMessage] =useState("")
-    const[loading,setLoading] =useState(false)
-
+    const[message,setMessage] =useState<string>("")
 
     const fetchAllBooks =(async ()=>{
         const response =await fetch(BOOKS_ENDPOINT)
@@ -58,7 +55,7 @@ const SearchPage =()=>{
                 <h4>All books</h4>
                 <div className={"books__container"}>
                     {allBooks.length >0?(
-                        allBooks.map((book,index)=>(
+                        allBooks.map((book:BookProps,index:number)=>(
                             <BookCard key={index} image={book.imageCover} category={book.genre} title={book.title} author={"Roald Dahl"}/>
                         ))
                     ):(
