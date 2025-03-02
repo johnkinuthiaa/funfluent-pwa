@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import BookCard from "../components/BookCard.tsx";
 import Modal from "../components/Modal.tsx";
+import BottomNavigation from "../components/BottomNavigation.tsx";
 
 type Book ={
     id:number |string,
@@ -51,6 +52,7 @@ const MyBooks =()=>{
                 )}
             </div>
             {message&&<Modal message={message} color={modalColor} />}
+            <BottomNavigation/>
         </div>
     )
 }

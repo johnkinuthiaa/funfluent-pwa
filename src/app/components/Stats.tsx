@@ -15,7 +15,9 @@ const Stats =()=>{
             </div>
             <div className={"coins__container"}>
                 <div className={"stat__holder"}>
-                    <PaidIcon/>
+                    <div className={"coin"}>
+                        <PaidIcon/>
+                    </div>
                     <p>28</p>
                 </div>
                 <div className={"stat__holder"}>

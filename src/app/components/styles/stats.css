@@ -1,22 +1,26 @@
 @media  screen and (max-width: 768px) {
     .stats__container{
         position: absolute;
-        width: 100%;
+        width: 98%;
         padding: 5px;
     }
     .stats__container,.coins__container{
         display: flex;
         justify-content: space-between;
-        margin: 5px;
+        margin: 2px;
+    }
+    .coin{
+        color: #FFBF32;
     }
     .stat__holder{
         display: flex;
-        padding:5px 15px 5px 8px;
-        border-radius: 25px;
+        padding:5px;
+        height: fit-content;
+        min-height: 30px;
+        border-radius: 10px;
         align-items: center;
         background-color: white;
         gap: 3px;
-        margin-top: 6px;
     }
     .level{
         display: flex;

@@ -1,6 +1,14 @@
 @media screen and (max-width: 768px){
+    .search__page{
+        width: 100%;
+        position:absolute;
+        display: block;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
     .searchPage__image{
-        width: 98%;
+        width: 100%;
         height: 300px;
         border-radius: 10px;
         scroll-behavior: smooth;

@@ -1,0 +1,69 @@
+@media  screen and (max-width: 768px) {
+    .select__country{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+    }
+    .country__container{
+        display: flex;
+        flex-direction: column;
+        scroll-behavior: smooth;
+        overflow: scroll;
+        width: 100%;
+        margin-bottom: 10px;
+
+    }
+    .search__country__text{
+        margin-top: -10px;
+        margin-left: 15px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+    .country{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 20px;
+        font-weight: bold;
+        font-size: large;
+    }
+    .country>*{
+        cursor: pointer;
+        width: 100%;
+    }
+    .flag{
+        width: fit-content;
+    }
+    .flag__container{
+
+    }
+    .continue__button{
+        width: 100%;
+        background: #FFBF32;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 20px;
+        margin: 10px;
+        font-size: large;
+        outline: none;
+        border: none;
+        height: fit-content;
+        cursor: pointer;
+    }
+    .bottom__container{
+        width: 100%;
+        position: absolute;
+        bottom: 5px;
+        background-color: white;
+        margin: 0;
+        height: fit-content;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+}

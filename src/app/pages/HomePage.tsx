@@ -1,5 +1,6 @@
 import Stats from "../components/Stats.tsx";
 import "./styles/homepage.css"
+import BottomNavigation from "../components/BottomNavigation.tsx";
 
 const HomePage =()=>{
     const username ="Riko"
@@ -15,6 +16,7 @@ const HomePage =()=>{
             <div>
                 <h2>Books category</h2>
             </div>
+            <BottomNavigation/>
         </div>
     )
 }

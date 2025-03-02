@@ -16,6 +16,9 @@ const Register =()=>{
     const[initialPassword,setInitialPassword] =useState<string>("")
     const[finalPassword,setFinalPassword] =useState<string>("")
     const user =useAuthState(auth)
+    const [userId,setUserId] =useState<number>(0);
+
+
     const registerWithGoogle =(async ()=>{
         const response =await signInWithPopup(auth,provider)
         if(response){
@@ -47,12 +50,13 @@ const Register =()=>{
                     },3000)
                 }else{
                     setMessage(data?.message)
+                    setUserId(data?.user?.id)
                     setModalColor("green")
                     setTimeout(()=>{
                         setMessage("")
                         setModalColor("")
+                        navigate(`/select-country/${userId}`)
                     },3000)
-                    navigate("/home")
                 }
             }
         }catch (e) {

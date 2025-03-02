@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import BookCard from "../components/BookCard.tsx";
 import {useState} from "react";
 import useSWR from "swr";
+import BottomNavigation from "../components/BottomNavigation.tsx";
 
 interface BookProps{
     id:number
@@ -23,7 +24,6 @@ const SearchPage =()=>{
         const response =await fetch(BOOKS_ENDPOINT)
         if(response.ok){
             const data =await response.json()
-            console.log(data?.statuscode)
             setAllBooks(data?.storyBookList)
         }else{
             setMessage("Error fetching data from the servers")
@@ -66,6 +66,7 @@ const SearchPage =()=>{
 
                     </div>
             </div>
+            <BottomNavigation/>
         </div>
     )
 }

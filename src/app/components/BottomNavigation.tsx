@@ -24,10 +24,10 @@ const BottomNavigation =()=>{
                         <p>Search</p>
                     </li>
                     <li onClick={()=>{
-                        navigate("/home")
+                        navigate("/saved-books")
                     }}>
                         <LibraryBooksIcon/>
-                        <p>My Book</p>
+                        <p>Saved Books</p>
                     </li>
                     <li onClick={()=>{
                         navigate("/home")
@@ -36,7 +36,7 @@ const BottomNavigation =()=>{
                         <p>Quiz</p>
                     </li>
                     <li onClick={()=>{
-                        navigate("/home")
+                        navigate("/profile")
                     }}>
                         <AccountCircleIcon/>
                         <p>Profile</p>
