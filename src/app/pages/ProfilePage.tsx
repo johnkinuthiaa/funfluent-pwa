@@ -6,7 +6,9 @@ import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 import InfoIcon from '@mui/icons-material/Info';
 import AddIcon from '@mui/icons-material/Add';
 import "./styles/profile.css"
+import {useNavigate} from "react-router-dom";
 const ProfilePage =()=>{
+    const navigate =useNavigate()
     return (
         <div className={"profile__page"}>
             <img src={"src/assets/profile.png"} alt={"banner image"} className={"banner__profile"}/>
@@ -21,7 +23,7 @@ const ProfilePage =()=>{
                 </div>
                 <div className={"profile__content__container"}>
                     <h2>Account settings</h2>
-                    <div className={"profile__content"}>
+                    <div className={"profile__content"} onClick={()=>navigate("/personalInformation")}>
                         <div>
                             <AccountCircleIcon/>
                             <h4>Personal Information</h4>
@@ -35,14 +37,14 @@ const ProfilePage =()=>{
                         </div>
                         <KeyboardArrowRightIcon/>
                     </div>
-                    <div className={"profile__content"}>
+                    <div className={"profile__content"} onClick={()=>navigate("/faq")}>
                         <div>
                             <HelpCenterIcon/>
                             <h4>FAQ</h4>
                         </div>
                         <KeyboardArrowRightIcon/>
                     </div>
-                    <div className={"profile__content"}>
+                    <div className={"profile__content"} onClick={()=>navigate("/help")}>
                         <div>
                             <InfoIcon/>
                             <h4>Help Center</h4>

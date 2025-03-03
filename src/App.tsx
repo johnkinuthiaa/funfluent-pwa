@@ -8,6 +8,9 @@ import SearchPage from "./app/pages/SearchPage.tsx";
 import MyBooks from "./app/pages/MyBooks.tsx"
 import ProfilePage from "./app/pages/ProfilePage.tsx";
 import SelectCountry from "./app/pages/SelectCountry.tsx";
+import Faq from "./app/pages/Faq.tsx";
+import HelpCenter from "./app/pages/HelpCenter.tsx";
+import PersonalInformation from "./app/pages/PersonalInformation.tsx";
 function App() {
   return (
       <>
@@ -19,6 +22,9 @@ function App() {
               <Route path={"/search"} element={<SearchPage/>}/>
               <Route path={"/profile"} element={<ProfilePage/>}/>
               <Route path={"/saved-books"} element={<MyBooks/>}/>
+              <Route path={"/faq"} element={<Faq/>}/>
+              <Route path={"/help"} element={<HelpCenter/>}/>
+              <Route path={"/personalInformation"} element={<PersonalInformation/>}/>
               <Route path={"/select-country/:userId"} element={<SelectCountry/>}/>
           </Routes>
       </>
