@@ -1,8 +1,9 @@
 import {countries} from "../utils/countries.ts"
 import "./styles/SelectCountry.css"
 import SearchIcon from "@mui/icons-material/Search";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import Modal from "../components/Modal.tsx";
 
 type Country ={
     name:string,
@@ -13,15 +14,22 @@ type Country ={
 
 const SelectCountry =()=>{
     const URL =window.location.href
-    // const userId =URL.match(/[^/]+$/)
-    const userId =2
+    const userId =URL.match(/[^/]+$/)
     const ENDPOINT =`/api/v1/users/${userId}/update/country`
     const[language,setLanguage] =useState<string>("")
     const[flag,setFlag] = useState<string>("")
     const[shortName,setShortName] = useState<string>("")
     const[message,setMessage] =useState<string>("")
     const navigate =useNavigate()
+    const[searchTerm,setSearchTerm] =useState<string>("")
+    const[languageArray,setLanguageArray] =useState<Country[]>([])
 
+    useEffect(() => {
+        setLanguageArray(countries)
+    }, []);
+    useEffect(()=>{
+        searchForLanguage()
+    },[searchTerm])
     const setInfo =(flag:string,name:string,shortName:string)=>{
         setLanguage(name)
         setFlag(flag)
@@ -49,11 +57,19 @@ const SelectCountry =()=>{
             }
         }catch (e) {
             throw new Error("Error "+e)
-
         }
-
     })
-    console.log(message)
+    const searchForLanguage =()=>{
+        const country:Country[] =countries.filter((country)=>{
+            return country.name.toLowerCase() ===searchTerm.toLowerCase()
+        })
+        console.log(country)
+        if(country.length>0) {
+            setLanguageArray(country)
+        }else{
+            setLanguageArray(countries)
+        }
+    }
 
     return(
         <div className={"select__country"}>
@@ -66,17 +82,26 @@ const SelectCountry =()=>{
                     </div>
                 </div>
                 <div className={"search"}>
-                    <button className={"search__button"} type={"submit"} ><SearchIcon/></button>
-                    <input type={"search"} placeholder={"Search country ..."}/>
+                    <button className={"search__button"} type={"submit"} onClick={(e)=>{
+                        e.preventDefault()
+                        searchForLanguage()
+
+                    }}><SearchIcon/></button>
+                    <input type={"search"} placeholder={"Search country ..."} onChange={(e)=>{
+                        setSearchTerm(e.target.value)
+                    }}/>
                 </div>
-                {countries.map(({flag,name,shortName}:Country)=>(
-                    <div className={"country"} onClick={()=>{
-                        setInfo(flag,name,shortName)
-                    }}>
-                        <p className={"flag"}>{flag}</p>
-                        <p>{name}</p>
-                    </div>
-                ))}
+                {languageArray.length>0?(
+                    languageArray.map(({flag,name,shortName}:Country)=>(
+                        <div className={"country"} onClick={()=>{
+                            setInfo(flag,name,shortName)
+                        }}>
+                            <p className={"flag"}>{flag}</p>
+                            <p>{name}</p>
+                        </div>
+                    ))
+                ):(<div>No Language found</div>)}
+
             </div>
             <div className={"bottom__container"}>
                 <button className={"continue__button"} onClick={(e)=>{
@@ -84,6 +109,7 @@ const SelectCountry =()=>{
                     updateLanguageInfo()
                 }}>Continue</button>
             </div>
+            {message&&<Modal color={"red"} message={message}/>}
         </div>
     )
 }
