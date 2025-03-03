@@ -29,13 +29,14 @@ const SearchPage =()=>{
             setMessage("Error fetching data from the servers")
         }
     })
-    const {isLoading,error}=useSWR(BOOKS_ENDPOINT,fetchAllBooks)
+    const {isLoading,data}=useSWR(BOOKS_ENDPOINT,fetchAllBooks)
     if(isLoading){
         return <p>Loading...</p>
     }
-    if(error){
-        setMessage("error fetching data")
+    if(data){
+        setAllBooks(data)
     }
+
 
     return (
         <div className={"search__page"}>
