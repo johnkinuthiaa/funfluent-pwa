@@ -4,6 +4,11 @@
         flex-direction: column;
         margin-bottom: 5px;
         position: relative;
+        box-shadow: 4px 4px 4px 4px rgb(0,0,0,0.6);
+        border-radius: 5px;
+    }
+    .book_card>div,h4{
+        padding: 2px;
     }
     .book__category{
         position: absolute;
@@ -28,5 +33,21 @@
     }
     .author{
         margin: 10px 0;
+    }
+    .save__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .save__book{
+        padding: 2px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background: transparent;
+    }
+    .save__book:hover{
+        color: #FFBF32;
+        background: blue;
     }
 }

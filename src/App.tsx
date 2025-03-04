@@ -11,6 +11,7 @@ import SelectCountry from "./app/pages/SelectCountry.tsx";
 import Faq from "./app/pages/Faq.tsx";
 import HelpCenter from "./app/pages/HelpCenter.tsx";
 import PersonalInformation from "./app/pages/PersonalInformation.tsx";
+import ReadBook from "./app/pages/ReadBook.tsx";
 function App() {
   return (
       <>
@@ -24,6 +25,7 @@ function App() {
               <Route path={"/saved-books"} element={<MyBooks/>}/>
               <Route path={"/faq"} element={<Faq/>}/>
               <Route path={"/help"} element={<HelpCenter/>}/>
+              <Route path={"/read/:id"} element={<ReadBook/>}/>
               <Route path={"/personalInformation"} element={<PersonalInformation/>}/>
               <Route path={"/select-country/:userId"} element={<SelectCountry/>}/>
           </Routes>

@@ -57,7 +57,7 @@ const SearchPage =()=>{
                 <div className={"books__container"}>
                     {allBooks.length >0?(
                         allBooks.map((book:BookProps,index:number)=>(
-                            <BookCard key={index} image={book.imageCover} category={book.genre} title={book.title} author={"Roald Dahl"}/>
+                            <BookCard key={index} image={"https://i.pinimg.com/736x/6f/bd/78/6fbd7857c91ee691e8e920deb210a54b.jpg"} category={book.genre} title={book.title} author={"Roald Dahl"} id={book.id.toString()}/>
                         ))
                     ):(
                         <>

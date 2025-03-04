@@ -43,8 +43,8 @@ const MyBooks =()=>{
             <div>
                 {books?.length>0?(
                     books?.map(({id,title,imageCover,author,genre}:Book,index:number)=>(
-                        <div key={index} id={id.toString()}>
-                            <BookCard category={genre} image={imageCover} title={title} author={author} />
+                        <div key={index} >
+                            <BookCard category={genre} image={imageCover} title={title} author={author} id={id.toString()}/>
                         </div>
                     ))
                 ):(
